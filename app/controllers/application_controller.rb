@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
+  # 1. Primeiro defina a proteção contra falsificação
+  protect_from_forgery with: :exception
+  
+  # 2. Depois peça para pular a verificação de token apenas em desenvolvimento
+  skip_before_action :verify_authenticity_token, if: -> { Rails.env.development? }
+  
   include ApplicationHelper
   require 'will_paginate/array'
-  protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :current_user_ban?
@@ -42,6 +47,8 @@ class ApplicationController < ActionController::Base
       coordination_index_path
     elsif resource.administration?
       administration_index_path
+    else
+      main_index_path
     end
   end
 

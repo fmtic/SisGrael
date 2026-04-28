@@ -34,16 +34,17 @@ gem 'jquery-rails', '4.3.1'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '3.3.7'
+gem 'pg', '1.2.3'
 #gem para o calendário
 gem 'momentjs-rails' , '2.20.1' 
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'bootstrap-datepicker-rails'
 
 gem 'rubyzip', '>= 1.2.1'
-gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
+gem 'caxlsx', git: 'https://github.com/caxlsx/caxlsx.git'
 gem 'axlsx_rails'
 group :development, :test do
-  gem 'sqlite3', '1.3.13'
+  # gem 'sqlite3', '~> 1.6'
   
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -60,7 +61,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '1.1.4'
+  gem 'pg', '1.2.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

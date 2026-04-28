@@ -30,3 +30,5 @@
 /public/uploads/user/*config/database.yml\nconfig/secrets.yml
 
 .log
+
+/backup/*.sql
